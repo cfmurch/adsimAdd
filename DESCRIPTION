@@ -1,0 +1,24 @@
+Package: adsimAdd
+Title: A Package with Additional Variables for 'adsim'
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Chad",
+           family = "Murchison",
+           role = c("aut", "cre"),
+           email = "first.last@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This package is designed to mirror the basic workflow of the
+    `adsim` package with some additional features.  Notably, cognitively intact
+    participants are added with attentuation to ADAS-Cog decline and scores
+    also allow for additional covariates.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

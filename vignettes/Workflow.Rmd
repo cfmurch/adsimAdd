@@ -1,0 +1,36 @@
+---
+title: "Workflow"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Workflow}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(adsimAdd)
+```
+
+
+#Basic Workflow
+
+1. Call the matrix of data parameters with `data(posterior)`  
+
+1. Create the necessary blocks/studies with `pl_blocks = make_posterior_blocks(posterior)`  
+
+1. Create the subject specific intercepts and slopes with `bl_vars = set_subject_vars(pl_blocks)`
+
+1. Add times and calculate the logit-level ADAS-Cog scores with `adas_theta = set_times(bl_vars)`
+
+1. Add placebo and donepezil attenuation along with random noise with `adas_calc = add_placebo_vals(adas_theta, pl_blocks)`
+
+1. Calculate classification of cognitive status from ADAS-Cog with `adas_final = add_ad_class(adas_calc)`
+
+1. Review the plots with `adas_plot = adas_plotter(adas_final)`
