@@ -2,7 +2,7 @@
 #'
 #'
 #'
-#' @importFrom simstudy defData, addPeriods, genData
+#' @importFrom simstudy defData addPeriods genData
 #' @importFrom dplyr select
 #'
 #' @export

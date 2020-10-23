@@ -6,8 +6,9 @@
 #'
 #' @export
 #'
-#' @import adsim
-#' @importFrom dplyr mutate, if_else
+#' @importFrom dplyr mutate if_else
+#'
+#'
 
 
 
@@ -42,9 +43,9 @@ set_subject_vars <- function(pl_blocks){
     bmmse <- runif(nSubj, popPars_curr['bmmse_lb'], popPars_curr['bmmse_ub']) #Sampling based on the randomly assigned MMSE
 
     #Sample APOE, Age, Sex - this uses the stock functions of adsim and pulls one parameter for each subjects
-    apo <- adsim:::.simApoE(nSubj, popPars_curr)
-    age <- adsim:::.simAge(nSubj, popPars_curr, apo)
-    gender <- adsim:::.simGen(nSubj, popPars_curr)
+    apo <- .simApoE(nSubj, popPars_curr)
+    age <- .simAge(nSubj, popPars_curr, apo)
+    gender <- .simGen(nSubj, popPars_curr)
 
 
     #Adjusting the population-level mean intercept/slope based on subject covariates

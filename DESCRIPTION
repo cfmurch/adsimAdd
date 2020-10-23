@@ -21,4 +21,8 @@ Depends:
 Suggests: 
     knitr,
     rmarkdown
+Imports:
+    dplyr,
+    simstudy,
+    ggplot2
 VignetteBuilder: knitr
